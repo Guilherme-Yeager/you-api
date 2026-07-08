@@ -13,7 +13,10 @@ class Momento:
     ):
         self.id = id
         self.descricao = descricao
-        self.timestamp = timestamp
+        self.ano = timestamp.year
+        self.mes = timestamp.month
+        self.dia = timestamp.day
+        self.hora = timestamp.strftime("%H:%M:%S")
         self.latitude = latitude
         self.longitude = longitude
 
@@ -21,7 +24,12 @@ class Momento:
         return {
             "id": self.id,
             "descricao": self.descricao,
-            "timestamp": self.timestamp.isoformat(),
+            "periodo": {
+                "ano": self.ano,
+                "mes": self.mes,
+                "dia": self.dia,
+                "hora": self.hora,
+            },
             "latitude": self.latitude,
             "longitude": self.longitude,
         }

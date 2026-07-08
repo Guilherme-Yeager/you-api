@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-class DefaultGenericResponse:
+class DefaultGenericResponseDto:
     def __init__(self, success: bool, message: str, data: None):
         self.success = success
         self.message = message
